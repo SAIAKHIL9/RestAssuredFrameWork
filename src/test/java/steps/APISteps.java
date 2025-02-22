@@ -29,10 +29,6 @@ public class APISteps {
         userId = response.jsonPath().getInt("id"); // Store user ID for later
     }
 
-    @Then("User store the user ID")
-    public void storeUserId() {
-        System.out.println("Stored User ID: " + userId);
-    }
 
     @When("User send a PUT request with the following details:")
     public void sendPUTRequest(DataTable table) {

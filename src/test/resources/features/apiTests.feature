@@ -7,7 +7,6 @@ Feature: API Testing using Cucumber and Rest Assured
       | name     | email               | gender | status |
       | John Doe | johndoe@example.com | male   | active |
     Then the response status code should be 201
-    And User store the user ID
     When User send a GET request
     Then the response status code should be 200
     And the response should contain the name "John Doe"
@@ -16,7 +15,6 @@ Feature: API Testing using Cucumber and Rest Assured
   Scenario: Retrieve the user details with GET
     Given User sends a POST request with JSON file "userData.json"
     Then the response status code should be 201
-    And User store the user ID
     When User send a GET request
     Then the response status code should be 200
     And the response should contain the name "John Doe"
@@ -25,7 +23,6 @@ Feature: API Testing using Cucumber and Rest Assured
   Scenario: Update an existing user with PUT and verify details
     Given User sends a POST request with JSON file "userData.json"
     Then the response status code should be 201
-    And User store the user ID
     When User send a PUT request with the following details:
       | name         | email               | gender | status   |
       | Updated Name | updated@example.com | male   | inactive |
@@ -37,7 +34,6 @@ Feature: API Testing using Cucumber and Rest Assured
   Scenario: Partially update an existing user with PATCH and verify details
     Given User sends a POST request with JSON file "userData.json"
     Then the response status code should be 201
-    And User store the user ID
     When User send a PATCH request with the following details:
       | status |
       | active |
