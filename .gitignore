@@ -1,0 +1,12 @@
+# Ignore IDE files
+.idea/
+*.iml
+
+# Ignore compiled files
+bin/
+target/
+
+# Ignore reports and logs
+*.log
+allure-results/
+test-output/
